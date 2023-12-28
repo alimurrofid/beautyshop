@@ -1,12 +1,13 @@
 <nav class="fixed top-0 z-20 w-full bg-white border-b border-gray-200 dark:bg-gray-900 start-0 dark:border-gray-600">
     <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{asset('assets/images/beauty-logo.png')}}" class="h-8" alt="Beauty Shop Logo">
-            <div class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span class=" text-rose-300">Beauty</span> Shop</div>
+            <img src="{{ asset('assets/images/beauty-logo.png') }}" class="h-8" alt="Beauty Shop Logo">
+            <div class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><span
+                    class=" text-rose-300">Beauty</span> Shop</div>
         </a>
         <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
-            <button type="button"
-                class="px-6 py-2 text-sm font-medium text-center text-white rounded-lg bg-rose-400 hover:bg-rose-300 focus:ring-4 focus:outline-none focus:ring-rose-100">Login</button>
+            <a href="{{ route('login') }}"
+                class="px-6 py-2 text-sm font-medium text-center text-white rounded-lg bg-rose-400 hover:bg-rose-300 focus:ring-4 focus:outline-none focus:ring-rose-100">Login</a>
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-sticky" aria-expanded="false">
@@ -22,7 +23,7 @@
             <ul
                 class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a href="#"
+                    <a href="/"
                         class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-400 md:p-0"
                         aria-current="page">Shop All</a>
                 </li>
@@ -36,7 +37,8 @@
                 </li>
                 <li>
                     <a href="#"
-                        class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-400 md:p-0">About Us</a>
+                        class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-rose-400 md:p-0">About
+                        Us</a>
                 </li>
             </ul>
         </div>
