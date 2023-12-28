@@ -19,6 +19,7 @@
 
     @yield('usercontent')
 
+    @include('sweetalert::alert')
 </body>
 
 </html>

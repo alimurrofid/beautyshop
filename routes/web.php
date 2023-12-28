@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardHomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landingpage');
-});
+})->name('landingpage');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/signup', [UserController::class, 'store'])->name('signup');
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [DashboardHomeController::class, 'index'])->name('dashboard.home');
+    });
+});
