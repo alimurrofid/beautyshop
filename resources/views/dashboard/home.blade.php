@@ -4,7 +4,8 @@
     <!-- row 1 -->
     <div class="flex flex-wrap -mx-3">
         <!-- card1 -->
-        <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4" data-tooltip-target="tooltip-userall">
+        <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
+            data-tooltip-target="tooltip-productall">
             <div
                 class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
@@ -13,8 +14,8 @@
                             <div>
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                    Total Users</p>
-                                <h5 class="text-4xl font-bold dark:text-white counter"></h5>
+                                    Total users</p>
+                                <h5 class="text-4xl font-bold dark:text-white counter">{{$totalUsers}}</h5>
                             </div>
                         </div>
                         <div class="px-3 text-right">
@@ -27,14 +28,14 @@
                 </div>
             </div>
         </div>
-        <div id="tooltip-userall" role="tooltip"
+        <div id="tooltip-productall" role="tooltip"
             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
             Jumlah Semua User
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <!-- card2-->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-            data-tooltip-target="tooltip-usernotvote">
+            data-tooltip-target="tooltip-userverif">
             <div
                 class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
@@ -43,8 +44,8 @@
                             <div>
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                    User Verified</p>
-                                <h5 class="text-4xl font-bold dark:text-white counter"></h5>
+                                    user Verified</p>
+                                <h5 class="text-4xl font-bold dark:text-white counter">{{$usersVerified}}</h5>
                             </div>
                         </div>
                         <div class="px-3 text-right">
@@ -57,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div id="tooltip-usernotvote" role="tooltip"
+        <div id="tooltip-userverif" role="tooltip"
             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
             Jumlah User yang Sudah Terverifikasi
             <div class="tooltip-arrow" data-popper-arrow></div>
@@ -74,7 +75,7 @@
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
                                     Total Product</p>
-                                <h5 class="text-4xl font-bold dark:text-white counter"></h5>
+                                <h5 class="text-4xl font-bold dark:text-white counter">{{$totalProducts}}</h5>
                             </div>
                         </div>
                         <div class="px-3 text-right">
@@ -96,7 +97,7 @@
 
         <!-- card4 -->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-            data-tooltip-target="tooltip-uservote">
+            data-tooltip-target="tooltip-productvote">
             <div
                 class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
@@ -106,7 +107,7 @@
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
                                     Product Ready</p>
-                                <h5 class="text-4xl font-bold dark:text-white counter"></h5>
+                                <h5 class="text-4xl font-bold dark:text-white counter">{{$productsVerified}}</h5>
                             </div>
                         </div>
                         <div class="px-3 text-right">
@@ -119,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <div id="tooltip-uservote" role="tooltip"
+        <div id="tooltip-productvote" role="tooltip"
             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
             Jumlah Produk yang Siap Dijual
             <div class="tooltip-arrow" data-popper-arrow></div>
@@ -137,169 +138,80 @@
                     </div>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 dark:border-white/40">
+                    <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+                        <thead class="align-bottom">
+                            <tr>
+                                <th
+                                    class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                    No
+                                </th>
+                                <th
+                                    class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                    Name</th>
+                                <th
+                                    class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                    PRICE</th>
+                                <th
+                                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                    IMAGE</th>
+                                <th
+                                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                    STATUS</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            <tr>
-                                <td
-                                    class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                                    <div class="flex items-center px-2 py-1">
-                                        <div>
-                                            <img src="../assets/img/icons/flags/US.png" alt="Country flag" />
+
+                            @foreach ($products as $product)
+                                <tr>
+                                    <td
+                                        class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                                        <span
+                                            class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">{{ $loop->iteration }}</span>
+                                    </td>
+
+                                    <td
+                                        class="p-2 text-sm text-left bg-transparent border-b align-center dark:border-white/40 whitespace-nowrap shadow-transparent">
+                                        <div class="flex items-center justify-center">
+                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
+                                                {{ $product->name }}</h6>
                                         </div>
-                                        <div class="ml-6">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Country:</p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">United States</h6>
+                                    </td>
+                                    <td
+                                        class="p-2 text-sm text-left bg-transparent border-b align-center dark:border-white/40 whitespace-nowrap shadow-transparent">
+                                        <div class="flex items-center justify-center">
+                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
+                                                {{ $product->price }}</h6>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="text-center">
-                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Sales:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">2500</h6>
-                                    </div>
-                                </td>
-                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="text-center">
-                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Value:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
-                                    </div>
-                                </td>
-                                <td
-                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="flex-1 text-center">
-                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Bounce:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">29.9%</h6>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td
-                                    class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                                    <div class="flex items-center px-2 py-1">
-                                        <div>
-                                            <img src="../assets/img/icons/flags/DE.png" alt="Country flag" />
+                                    </td>
+                                    <td
+                                        class="p-2 text-sm text-left bg-transparent border-b align-center dark:border-white/40 whitespace-nowrap shadow-transparent">
+                                        <div class="flex items-center justify-center">
+                                            <img src="{{ asset('storage/' . $product->image) }}" alt=""
+                                                class="w-20 h-20 rounded-lg">
                                         </div>
-                                        <div class="ml-6">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Country:</p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Germany</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="text-center">
-                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Sales:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">3.900</h6>
-                                    </div>
-                                </td>
-                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Value:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$440,000</h6>
-                                    </div>
-                                </td>
-                                <td
-                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="flex-1 text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Bounce:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">40.22%</h6>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td
-                                    class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                                    <div class="flex items-center px-2 py-1">
-                                        <div>
-                                            <img src="../assets/img/icons/flags/GB.png" alt="Country flag" />
-                                        </div>
-                                        <div class="ml-6">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Country:</p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Great Britain</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td
-                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Sales:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">1.400</h6>
-                                    </div>
-                                </td>
-                                <td
-                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Value:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$190,700</h6>
-                                    </div>
-                                </td>
-                                <td
-                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                    <div class="flex-1 text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Bounce:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">23.44%</h6>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="p-2 align-middle bg-transparent border-0 w-3/10 whitespace-nowrap">
-                                    <div class="flex items-center px-2 py-1">
-                                        <div>
-                                            <img src="../assets/img/icons/flags/BR.png" alt="Country flag" />
-                                        </div>
-                                        <div class="ml-6">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Country:</p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Brasil</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                                    <div class="text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Sales:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">562</h6>
-                                    </div>
-                                </td>
-                                <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                                    <div class="text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Value:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$143,960</h6>
-                                    </div>
-                                </td>
-                                <td
-                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-0 whitespace-nowrap">
-                                    <div class="flex-1 text-center">
-                                        <p
-                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                            Bounce:</p>
-                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">32.14%</h6>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+
+                                    <td class="bg-transparent border-b align-center">
+                                        @if ($product->status == 0)
+                                            <span data-tooltip-target="tooltip-soldout{{ $product->id }}"
+                                                class="bg-gradient-to-tl from-red-600 to-red-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Soldout</span>
+                                            <div id="tooltip-soldout{{ $product->id }}" role="tooltip"
+                                                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                Soldout
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+                                        @else
+                                            <span data-tooltip-target="tooltip-ready{{ $product->id }}"
+                                                class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Ready</span>
+                                            <div id="tooltip-ready{{ $product->id }}" role="tooltip"
+                                                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                Ready
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

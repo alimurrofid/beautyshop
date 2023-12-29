@@ -101,34 +101,6 @@
                                                 </div>
                                             @endif
                                         </td>
-
-                                        <td
-                                            class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                            <div class="flex items-center justify-center">
-                                                <!-- Button Edit user -->
-                                                {{-- <a href="{{ route('user.edit', $user->id) }}" type="button"
-                                                    data-tooltip-target="tooltip-edit{{ $user->id }}"
-                                                    class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-1.5 text-center m-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-400 dark:focus:ring-yellow-800">Edit</a>
-                                                <div id="tooltip-edit{{ $user->id }}" role="tooltip"
-                                                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                                    Edit Kandidat
-                                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                                </div> --}}
-                                                <!-- End Button Edit user -->
-
-                                                <!-- Button Delete user -->
-                                                {{-- <a href="{{ route('user.destroy', $user->id) }}"
-                                                    data-tooltip-target="tooltip-delete{{ $user->id }}"
-                                                    class="text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-1.5 text-center m-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                                                    data-confirm-delete="true">Delete</a>
-                                                <div id="tooltip-delete{{ $user->id }}" role="tooltip"
-                                                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                                    Hapus Kandidat
-                                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                                </div> --}}
-                                                <!-- End Button Delete user -->
-                                            </div>
-                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

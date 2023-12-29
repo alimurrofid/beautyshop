@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -42,6 +43,14 @@ class LoginController extends Controller
     }
     public function logout()
     {
+        if (auth()->user()->role == 'admin') {
+            Auth::logout();
+
+            request()->session()->invalidate();
+            request()->session()->regenerateToken();
+            Alert::toast('Anda berhasil logout', 'success');
+            return redirect()->route('login');
+        }
         Auth::logout();
 
         request()->session()->invalidate();

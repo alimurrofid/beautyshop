@@ -34,16 +34,18 @@
                     </h2>
                     <div class="flex flex-wrap items-center justify-center gap-7 mt-7">
                         <!-- Card Candidates -->
+                        @foreach ($products as $product)
                         <div class="max-w-sm bg-white rounded-md shadow w-72">
                             <img class="object-cover object-center w-full rounded-t-md h-72"
-                                src="{{ asset('assets/images/skincare.png') }}" alt="" />
+                                src="{{ asset('storage/' . $product->image) }}" alt="Product Image" />
                             <div class="flex flex-col items-start mt-2 ms-3">
-                                <span class="my-1 text-xl font-semibold text-black">Dewy Glow Jelly Cream</span>
-                                <span class="mt-1 mb-4 text-base font-medium text-slate-600">Rp. 20.000,00</span>
+                                <span class="my-1 text-xl font-semibold text-black">{{$product->name}}</span>
+                                <span class="mt-1 mb-4 text-base font-medium text-slate-600">Rp. {{$product->price}}</span>
                             </div>
                             <button class="px-20 py-1 mx-auto mb-6 font-bold border border-black rounded-lg hover:text-rose-400 hover:border-rose-400 hover:shadow-md">Add To
                                 Cart</button>
                         </div>
+                        @endforeach
                         <!-- End Card Candidates -->
                         
                     </div>

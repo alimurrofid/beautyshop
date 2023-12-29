@@ -121,11 +121,34 @@
                                     <tr>
                                         <td class="text-sm font-normal leading-normal">{{ $loop->iteration }}</td>
                                         <td class="text-sm font-normal leading-normal">{{ $product->name }}</td>
-                                        <td class="text-sm font-normal leading-normal">{{ $product->price }}</td>
+                                        <td class="text-sm font-normal leading-normal">Rp. {{ $product->price }}</td>
                                         <td class="text-sm font-normal leading-normal">
                                             <img src="{{ asset('storage/' . $product->image) }}" alt=""
                                                 class="w-20 h-20 rounded-lg">
-                                        <td class="text-sm font-normal leading-normal">{{ $product->status }}</td>
+                                        <td class="text-sm font-normal leading-normal">
+                                            @if ($product->status == 0)
+                                                <span data-tooltip-target="tooltip-belum{{ $product->id }}"
+                                                    class="bg-gradient-to-tl from-red-600 to-red-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Soldout</span>
+                                                <div id="tooltip-belum{{ $product->id }}" role="tooltip"
+                                                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                    Soldout
+                                                    <div class="tooltip-arrow" data-popper-arrow></div>
+                                                </div>
+                                            @else
+                                                <form action="{{ route('product.reset', $product->id) }}" method="POST"
+                                                    id="reset-form-{{ $product->id }}">
+                                                    @csrf
+                                                    <button type="button" onclick="confirmReset({{ $product->id }})"
+                                                        data-tooltip-target="tooltip-sudah{{ $product->id }}"
+                                                        class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Ready</button>
+                                                    <div id="tooltip-sudah{{ $product->id }}" role="tooltip"
+                                                        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                        Product Ready
+                                                        <div class="tooltip-arrow" data-popper-arrow></div>
+                                                    </div>
+                                                </form>
+                                            @endif
+                                        </td>
                                         <td class="flex flex-wrap text-sm font-normal leading-normal">
                                             <!-- Button Edit product -->
                                             <button data-modal-target="edit-product-modal{{ $product->id }}"
@@ -217,7 +240,8 @@
                                                                     <label
                                                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                                                         for="image">Upload Image</label>
-                                                                    <input type="hidden" name="oldImage" value="{{$product->image}}">
+                                                                    <input type="hidden" name="oldImage"
+                                                                        value="{{ $product->image }}">
                                                                     <input name="image"
                                                                         class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 @error('image') is-invalid @enderror"
                                                                         id="image" type="file">
@@ -255,4 +279,29 @@
     <!-- Argon -->
     <script src="{{ asset('assets/js/sidenav-burger.js') }}"></script>
     <script src="{{ asset('assets/js/fixed-plugin.js') }}"></script>
+
+    <script>
+        function confirmReset(id) {
+            Swal.fire({
+                title: 'Konfirmasi Reset',
+                text: 'Product akan direset!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Reset!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika pengguna mengklik "Ya, Hapus!", kirimkan permintaan penghapusan ke server
+                    document.getElementById('reset-form-' + id).submit();
+                    Swal.fire(
+                        'Direset!',
+                        'Product berhasil direset.',
+                        'success'
+                    )
+                }
+            });
+        }
+    </script>
 @endpush

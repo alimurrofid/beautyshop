@@ -23,7 +23,7 @@
         <ul class="flex flex-col pl-0 mb-0">
             <li class="mt-0.5 w-full">
                 <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors {{ request()->routeIs('dashboard.home') ? 'font-semibold text-slate-700 rounded-lg bg-blue-500/13' : '' }}"
-                    href="">
+                    href="{{route('dashboard.home')}}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-indigo-700 ni ni-tv-2"></i>
@@ -71,15 +71,6 @@
                         docs</p>
                 </div>
             </div>
-        </div>
-        <!-- Button Countdown-->
-        <a href="" data-tooltip-target="tooltip-countdown"
-            class="inline-block w-full px-8 py-2 mb-4 text-xs font-bold leading-normal text-center text-white capitalize transition-all ease-in bg-yellow-400 rounded-lg shadow-md bg-150 hover:shadow-xs hover:-translate-y-px"><i
-                class="pr-2 fa-solid fa-hourglass-start"></i>Countdown</a>
-        <div id="tooltip-countdown" role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-            Hitung Mundur Pemilihan
-            <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <!-- Button Documentation-->
         <a href="" data-tooltip-target="tooltip-documentation"

@@ -17,9 +17,7 @@ use App\Http\Controllers\DashboardHomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage');
-})->name('landingpage');
+Route::get('/', [DashboardHomeController::class, 'landingpage'])->name('landingpage');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -31,5 +29,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/user', [UserController::class, 'index'])->name('dashboard.user');
         Route::post('/user/{user}/verif', [UserController::class, 'verif'])->name('user.verif');
         Route::resource('product', ProductController::class);
+        Route::post('/product/reset{product}', [ProductController::class, 'reset'])->name('product.reset');
     });
 });
