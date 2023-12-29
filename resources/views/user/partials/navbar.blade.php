@@ -11,12 +11,19 @@
                 <button type="button" data-dropdown-toggle="language-dropdown-menu"
                     class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-900 rounded-lg cursor-pointer dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                     <img class="w-8 h-8 mr-1 rounded-full" src="{{ asset('assets/images/user.jpg') }}" alt="user photo">
-                    {{auth()->user()->name}}
+                    {{ auth()->user()->name }}
                 </button>
                 <!-- Dropdown -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
                     id="language-dropdown-menu">
                     <ul class="py-2 font-medium" role="none">
+                        <li>
+                            @if (auth()->user()->status == 0)
+                                <div class="block px-4 py-2 text-sm text-gray-700 bg-gray-100 ">Unverified</div>
+                            @else
+                                <div class="block px-4 py-2 text-sm text-green-700 bg-green-100 ">Verified</div>
+                            @endif
+                        </li>
                         <li>
                             <form action="{{ route('logout') }}" method="POST"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
@@ -34,7 +41,6 @@
                                 </button>
                             </form>
                         </li>
-
                     </ul>
                 </div>
                 <button data-collapse-toggle="navbar-language" type="button"

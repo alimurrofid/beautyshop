@@ -12,7 +12,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        
+        return view('dashboard.user', [
+            'users' => User::all()
+        ]);
     }
 
     public function store(StoreUserRequest $request)
@@ -33,4 +35,16 @@ class UserController extends Controller
         }
     }
 
+    public function verif(User $user)
+    {
+        try {
+            $user->update([
+                'status' => 1
+            ]);
+            return redirect()->back();
+        } catch (\Throwable $e) {
+            Alert::error('Error', 'Verifikasi gagal');
+            return redirect()->back();
+        }
+    }
 }

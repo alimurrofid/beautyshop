@@ -4,8 +4,7 @@
     <!-- row 1 -->
     <div class="flex flex-wrap -mx-3">
         <!-- card1 -->
-        <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-            data-tooltip-target="tooltip-candidate">
+        <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4" data-tooltip-target="tooltip-userall">
             <div
                 class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
@@ -14,38 +13,7 @@
                             <div>
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                    Candidate</p>
-                                <h5 class="text-4xl font-bold dark:text-white counter"></h5>
-                            </div>
-                        </div>
-                        <div class="px-3 text-right">
-                            <div
-                                class="inline-block w-16 h-16 text-center mt-1.5 rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
-                                <i class="relative text-3xl text-white fa-solid fa-user-tie top-3.5"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="tooltip-candidate" role="tooltip"
-            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
-            Jumlah Kandidat
-            <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
-
-        <!-- card2 -->
-        <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-            data-tooltip-target="tooltip-userall">
-            <div
-                class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-                <div class="flex-auto p-4">
-                    <div class="flex flex-row ">
-                        <div class="flex-none w-2/3 max-w-full px-3">
-                            <div>
-                                <p
-                                    class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                    All Users</p>
+                                    Total Users</p>
                                 <h5 class="text-4xl font-bold dark:text-white counter"></h5>
                             </div>
                         </div>
@@ -64,9 +32,9 @@
             Jumlah Semua User
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
-        <!-- card3 -->
+        <!-- card2-->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-            data-tooltip-target="tooltip-uservote">
+            data-tooltip-target="tooltip-usernotvote">
             <div
                 class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
@@ -75,7 +43,7 @@
                             <div>
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                    Already Vote</p>
+                                    User Verified</p>
                                 <h5 class="text-4xl font-bold dark:text-white counter"></h5>
                             </div>
                         </div>
@@ -89,14 +57,14 @@
                 </div>
             </div>
         </div>
-        <div id="tooltip-uservote" role="tooltip"
+        <div id="tooltip-usernotvote" role="tooltip"
             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
-            Jumlah User yang Sudah Memilih
+            Jumlah User yang Sudah Terverifikasi
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
-        <!-- card4-->
+        <!-- card3 -->
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
-            data-tooltip-target="tooltip-usernotvote">
+            data-tooltip-target="tooltip-candidate">
             <div
                 class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
@@ -105,99 +73,236 @@
                             <div>
                                 <p
                                     class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                                    Not yet Vote</p>
+                                    Total Product</p>
                                 <h5 class="text-4xl font-bold dark:text-white counter"></h5>
                             </div>
                         </div>
                         <div class="px-3 text-right">
                             <div
-                                class="inline-block w-16 h-16 text-center mt-1.5 rounded-circle bg-gradient-to-tl from-orange-500 to-yellow-500">
-                                <i class="relative text-3xl text-white fa-solid fa-user-xmark top-3.5 left-0.5"></i>
+                                class="inline-block w-16 h-16 text-center mt-1.5 rounded-circle bg-gradient-to-tl from-blue-500 to-violet-500">
+                                <i class="relative text-3xl text-white fa-solid fa-boxes-stacked top-3.5"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="tooltip-usernotvote" role="tooltip"
+        <div id="tooltip-candidate" role="tooltip"
             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
-            Jumlah User yang Belum Memilih
+            Jumlah Product
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
 
-    </div>
 
-    <!-- cards row 2 -->
-    <div class="flex flex-wrap mt-6 -mx-3">
-        <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
+        <!-- card4 -->
+        <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4"
+            data-tooltip-target="tooltip-uservote">
             <div
-                class="border-black/12.5 dark:bg-slate-850 dark:shadow-dark-xl shadow-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
-                <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid p-6 pt-4 pb-0">
-                    <h6 class="capitalize dark:text-white">Sales overview</h6>
-                    <p class="mb-0 text-sm leading-normal dark:text-white dark:opacity-60">
-                        <i class="fa fa-arrow-up text-emerald-500"></i>
-                        <span class="font-semibold">4% more</span> in 2021
-                    </p>
-                </div>
+                class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex-auto p-4">
-                    <div>
-                        <canvas id="chart-line" height="300"></canvas>
+                    <div class="flex flex-row ">
+                        <div class="flex-none w-2/3 max-w-full px-3">
+                            <div>
+                                <p
+                                    class="mb-0 font-sans text-lg font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
+                                    Product Ready</p>
+                                <h5 class="text-4xl font-bold dark:text-white counter"></h5>
+                            </div>
+                        </div>
+                        <div class="px-3 text-right">
+                            <div
+                                class="inline-block w-16 h-16 text-center mt-1.5 rounded-circle bg-gradient-to-tl from-emerald-500 to-teal-400">
+                                <i class="relative text-3xl text-white fa-solid fa-gift top-3.5"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="tooltip-uservote" role="tooltip"
+            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
+            Jumlah Produk yang Siap Dijual
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+    </div>
 
-        <div class="w-full max-w-full px-3 lg:w-5/12 lg:flex-none">
-            <div slider class="relative w-full h-full overflow-hidden rounded-2xl">
-                <!-- slide 1 -->
-                <div slide class="absolute w-full h-full transition-all duration-500">
-                    <img class="object-cover h-full" src="./assets/img/carousel-1.jpg" alt="carousel image" />
-                    <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
-                        <div
-                            class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
-                            <i class="top-0.75 text-xxs relative text-slate-700 ni ni-camera-compact"></i>
-                        </div>
-                        <h5 class="mb-1 text-white">Get started with Argon</h5>
-                        <p class="dark:opacity-80">There’s nothing I really wanted to do in life that I wasn’t
-                            able to get good at.</p>
+    <!-- cards row 2 -->
+    <div class="flex flex-wrap mt-6 -mx-3">
+        <div class="w-full max-w-full px-3 mt-0 mb-6 lg:mb-0 ">
+            <div
+                class="relative flex flex-col min-w-0 break-words bg-white border-0 border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl dark:bg-gray-950 border-black-125 rounded-2xl bg-clip-border">
+                <div class="p-4 pb-0 mb-0 rounded-t-4">
+                    <div class="flex justify-between">
+                        <h6 class="mb-2 dark:text-white">Newest Product</h6>
                     </div>
                 </div>
-
-                <!-- slide 2 -->
-                <div slide class="absolute w-full h-full transition-all duration-500">
-                    <img class="object-cover h-full" src="./assets/img/carousel-2.jpg" alt="carousel image" />
-                    <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
-                        <div
-                            class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
-                            <i class="top-0.75 text-xxs relative text-slate-700 ni ni-bulb-61"></i>
-                        </div>
-                        <h5 class="mb-1 text-white">Faster way to create web pages</h5>
-                        <p class="dark:opacity-80">That’s my skill. I’m not really specifically talented at
-                            anything except for the ability to learn.</p>
-                    </div>
+                <div class="overflow-x-auto">
+                    <table class="items-center w-full mb-4 align-top border-collapse border-gray-200 dark:border-white/40">
+                        <tbody>
+                            <tr>
+                                <td
+                                    class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                                    <div class="flex items-center px-2 py-1">
+                                        <div>
+                                            <img src="../assets/img/icons/flags/US.png" alt="Country flag" />
+                                        </div>
+                                        <div class="ml-6">
+                                            <p
+                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                                Country:</p>
+                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">United States</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="text-center">
+                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Sales:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">2500</h6>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="text-center">
+                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Value:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$230,900</h6>
+                                    </div>
+                                </td>
+                                <td
+                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="flex-1 text-center">
+                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Bounce:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">29.9%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                                    <div class="flex items-center px-2 py-1">
+                                        <div>
+                                            <img src="../assets/img/icons/flags/DE.png" alt="Country flag" />
+                                        </div>
+                                        <div class="ml-6">
+                                            <p
+                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                                Country:</p>
+                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Germany</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="text-center">
+                                        <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Sales:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">3.900</h6>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Value:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$440,000</h6>
+                                    </div>
+                                </td>
+                                <td
+                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="flex-1 text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Bounce:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">40.22%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
+                                    <div class="flex items-center px-2 py-1">
+                                        <div>
+                                            <img src="../assets/img/icons/flags/GB.png" alt="Country flag" />
+                                        </div>
+                                        <div class="ml-6">
+                                            <p
+                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                                Country:</p>
+                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Great Britain</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Sales:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">1.400</h6>
+                                    </div>
+                                </td>
+                                <td
+                                    class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Value:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$190,700</h6>
+                                    </div>
+                                </td>
+                                <td
+                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
+                                    <div class="flex-1 text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Bounce:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">23.44%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 align-middle bg-transparent border-0 w-3/10 whitespace-nowrap">
+                                    <div class="flex items-center px-2 py-1">
+                                        <div>
+                                            <img src="../assets/img/icons/flags/BR.png" alt="Country flag" />
+                                        </div>
+                                        <div class="ml-6">
+                                            <p
+                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                                Country:</p>
+                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Brasil</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Sales:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">562</h6>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Value:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">$143,960</h6>
+                                    </div>
+                                </td>
+                                <td
+                                    class="p-2 text-sm leading-normal align-middle bg-transparent border-0 whitespace-nowrap">
+                                    <div class="flex-1 text-center">
+                                        <p
+                                            class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
+                                            Bounce:</p>
+                                        <h6 class="mb-0 text-sm leading-normal dark:text-white">32.14%</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-                <!-- slide 3 -->
-                <div slide class="absolute w-full h-full transition-all duration-500">
-                    <img class="object-cover h-full" src="./assets/img/carousel-3.jpg" alt="carousel image" />
-                    <div class="block text-start ml-12 left-0 bottom-0 absolute right-[15%] pt-5 pb-5 text-white">
-                        <div
-                            class="inline-block w-8 h-8 mb-4 text-center text-black bg-white bg-center rounded-lg fill-current stroke-none">
-                            <i class="top-0.75 text-xxs relative text-slate-700 ni ni-trophy"></i>
-                        </div>
-                        <h5 class="mb-1 text-white">Share with us your design tips!</h5>
-                        <p class="dark:opacity-80">Don’t be afraid to be wrong because you can’t learn anything
-                            from a compliment.</p>
-                    </div>
-                </div>
-
-                <!-- Control buttons -->
-                <button btn-next
-                    class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 active:scale-110 top-6 right-4"><i
-                        class="fa-solid fa-chevron-right"></i></button>
-                <button btn-prev
-                    class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 active:scale-110 top-6 right-16"><i
-                        class="fa-solid fa-chevron-left"></i></button>
             </div>
         </div>
     </div>
