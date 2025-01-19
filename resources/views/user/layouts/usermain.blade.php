@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset('assets/images/beauty-logo.png') }} " type="image/png" />
-    <title>@yield('title') - Beauty Shop</title>
+    <title>@yield('title') - Vehicle Request</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Bootstrap Icon -->
@@ -14,8 +13,6 @@
 </head>
 
 <body class=" bg-rose-50">
-
-    @include('user.partials.navbar')
 
     @yield('usercontent')
 

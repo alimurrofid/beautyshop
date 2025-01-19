@@ -13,10 +13,7 @@ class LoginController extends Controller
     {
         return view('login');
     }
-    public function register()
-    {
-        return view('register');
-    }
+    
     public function authenticate(Request $request)
     {
         $input = $request->all();
@@ -26,36 +23,36 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-
         if (auth()->attempt(array('name' => $input['name'], 'password' => $input['password']))) {
-            if (auth()->user()->role == 'admin') {
-                $request->session()->regenerate();
+            $request->session()->regenerate();
+
+            // Check the user's role
+            if (auth()->user()->hasRole('admin')) {
+                // Redirect to dashboard.home for admins
                 Alert::toast('Selamat datang ' . auth()->user()->name, 'success');
                 return redirect()->route('dashboard.home');
-            } else if (auth()->user()->role == 'user') {
-                $request->session()->regenerate();
+            } elseif (auth()->user()->hasRole('approver1') || auth()->user()->hasRole('approver2')) {
+                // Redirect to approve-booking.index for approvers
                 Alert::toast('Selamat datang ' . auth()->user()->name, 'success');
-                return redirect()->route('landingpage');
+                return redirect()->route('approve-booking.index');
             }
+
+            // In case of other roles, you can add more conditions as needed
+            Alert::toast('Role tidak dikenali', 'error');
+            return redirect()->route('login');
         }
+
         Alert::toast('Username atau password salah', 'error');
         return redirect()->route('login');
     }
+
     public function logout()
     {
-        if (auth()->user()->role == 'admin') {
-            Auth::logout();
-
-            request()->session()->invalidate();
-            request()->session()->regenerateToken();
-            Alert::toast('Anda berhasil logout', 'success');
-            return redirect()->route('login');
-        }
         Auth::logout();
 
         request()->session()->invalidate();
         request()->session()->regenerateToken();
         Alert::toast('Anda berhasil logout', 'success');
-        return redirect()->route('landingpage');
+        return redirect()->route('login');
     }
 }

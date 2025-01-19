@@ -14,17 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => 'admin',
-            'phone_number' => '081234567890',
-            'email' => 'admin@testing.com',
-            'password' => bcrypt('admin'),
-            'role' => 1,
-        ]);
-        User::factory(10)->create();
 
         $this->call([
-            // ProductSeeder::class,
+            RolePermissionSeeder::class,
+            UserSeeder::class,
+            DriverSeeder::class,
+            VehicleSeeder::class,
+            MaintenanceSeeder::class,
+            BookingSeeder::class,
         ]);
     }
 }
